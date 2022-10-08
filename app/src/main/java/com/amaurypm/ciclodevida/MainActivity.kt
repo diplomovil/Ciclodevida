@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import com.blogspot.atifsoftwares.animatoolib.Animatoo
 
 class MainActivity : AppCompatActivity() {
 
@@ -18,13 +19,14 @@ class MainActivity : AppCompatActivity() {
         Log.d("INFORMACION", "onCreate()")
 
         mp = MediaPlayer.create(this, R.raw.zelda)
-        mp.start()
+        //mp.start()
 
     }
 
     fun click(v: View){
         val intent = Intent(this, MainActivity2::class.java)
         startActivity(intent)
+        Animatoo.animateSpin(this)
     }
 
     override fun onStart() {
@@ -35,7 +37,7 @@ class MainActivity : AppCompatActivity() {
     override fun onRestart() {
         super.onRestart()
         Log.d("INFORMACION", "onReStart()")
-        mp.start() 
+        //mp.start()
     }
 
     override fun onResume() {
@@ -46,7 +48,7 @@ class MainActivity : AppCompatActivity() {
     override fun onPause() {
         super.onPause()
         Log.d("INFORMACION", "onPause()")
-        mp.pause()
+        //mp.pause()
 
 
     }
